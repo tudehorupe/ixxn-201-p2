@@ -1,0 +1,768 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: 'Playfair Display', serif;
+  color: #001021;
+}
+
+header{
+  top: 0;
+  left: 0;
+}
+
+.nav-fade, .nav-no-fade{
+  display: flex;
+  padding: 1.5vh 0;
+  text-transform: uppercase;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.nav-fade{
+  animation:1s ease 1.5s normal forwards 1 fadein;
+  opacity:0
+}
+
+#logo{
+  flex: 1;
+  margin-left: 15%;
+}
+
+#logo img{
+  width: 5vw;
+  height: auto;
+  transform: translate(0, 5%);
+}
+
+.menu{
+  flex: 3;
+  display: flex;
+  text-decoration: none;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 15vw;
+}
+
+.menu a{
+  justify-content: space-between;
+  color: #001021;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 110%;
+  letter-spacing: 0.15em;
+  transform: translate(0, 50%);
+}
+
+.menu .portfolio-link-underline, .menu .about-link-underline, .menu .contact-link-underline{
+   text-decoration: underline;
+}
+
+.about-link, .menu .about-link-underline{
+  margin: 0 10vw;
+}
+
+.menu a:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #001021;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+.menu a:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+nav::after{
+	content: '';
+	display: table;
+	clear: both;
+}
+
+.home-landing{
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #001021;
+}
+
+.slider{
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  margin-top: 50%;
+}
+
+.hero{
+  height: 60%;
+  width: 100%;
+  margin-top: 12vh;
+}
+
+.hero img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.firm-name{
+  position: absolute;
+  top: 80%;
+  margin-left: 27%;
+  font-size: 100px;
+  transform: translate(-20%, -70%);
+  color: white;
+  animation: 1s ease 2.5s normal forwards 1 fadein;
+  opacity:0
+}
+
+@keyframes fadein{
+  from{opacity:0}
+  to{opacity:1}
+}
+
+.intro-text, .about-intro-text{
+  margin-top: 10vh;
+  margin-bottom: 20vh;
+  font-size: 120%;
+  background-color: #001021;
+  color: white;
+  padding: 2em 5em;
+}
+
+.intro-text{
+  margin-top: 20vh;
+  text-align: center;
+  padding: 2em 10em;
+}
+
+.wrapper {
+  overflow: hidden;
+}
+.gallery-push{
+  overflow: hidden;
+}
+
+.sliding-background {
+  margin-top: 5vh;
+  background: url("../img/gallery.jpg") repeat-x;
+  background-size: 50%;
+  height: 50vh;
+  width: 5076px;
+  animation: gallery 60s linear infinite;
+  overflow: hidden;
+}
+
+.sliding-background img{
+  width: 20%;
+  height: auto;
+}
+
+
+@keyframes gallery{
+  0%{
+    transform: translate3d(0, 0, 0);
+  }
+  100%{
+    transform: translate3d(-1692px, 0, 0);
+  }
+}
+
+.content-title, .portfolio-title, .contact-title{
+  font-size: 400%;
+  opacity: 0.5;
+  letter-spacing: 0.15em;
+  margin-left: 2%;
+  animation: mover 2s infinite  alternate;
+}
+
+.content-title:hover, .contact-title:hover, .portfolio-title:hover{
+  opacity: 1;
+}
+
+.Auckland, .Wellington, .Christchurch{
+	flex: 1;
+	background-color: #e4ebf1;
+	padding: 0 20px;
+}
+
+.Wellington{
+	margin: 0 50px;
+}
+
+@keyframes mover{
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-20px); }
+}
+
+.event-info{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4vh;
+}
+
+.event-date{
+  background-color: rgb(0, 16, 33);
+  color: white;
+  font-size: 130%;
+  padding: 2em 5em;
+  justify-content: center;
+}
+
+.event-text{
+  background-color: rgb(0, 16, 33, 0.1);
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  padding: 3%;
+  font-size: 120%;
+}
+
+.portfolio-to-contact-link{
+  text-decoration: underline;
+  color: #001021;
+}
+
+.portfolio-to-contact-link:hover{
+ color: white;
+ background-color: #001021;
+}
+
+.portfolio-padding, .people-padding, .contact-padding{
+  background-color: #001021;
+  width: 2vw;
+  height: 0.5vw;
+}
+
+.contact-padding{
+  margin: 2vh 0;
+}
+
+.portfolio, .about, .contact{
+  margin-top: 20vh;
+}
+
+.content-intro{
+  max-width: 55%;
+  margin-bottom: 8vh;
+  font-size: 120%;
+}
+
+.portfolio-img-right, .portfolio-img-left{
+  flex: 1;
+}
+
+.portfolio-img-right img, .portfolio-img-left img{
+  width: 100%;
+  height: auto;
+  justify-content: flex-end;
+  float: right;
+  align-items: flex-end;
+}
+
+.hero, .sliding-background, .portfolio-img-right, .portfolio-img-left, .name-role-image{
+  filter: grayscale(100%);
+}
+
+.portfolio-img-right:hover, .portfolio-img-left:hover{
+  filter: grayscale(0%);
+}
+
+.align-items{
+  max-width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.name-role-image img{
+  width: 60%;
+  height: auto;
+}
+
+.people-row{
+  margin-bottom: 20vh;
+}
+
+.shortcuts{
+	display: flex;
+  margin-top: 20vh;
+}
+
+.link{
+  background-color: #001021;
+  color: white;
+	flex:1;
+	text-align: center;
+	padding: 1em;
+	margin-right: 4px;
+	text-decoration: none;
+	font-size: 120%;
+}
+
+.link:hover{
+  background-color: rgb(0, 16, 33, 0.1);
+  color: #001021;
+	transition: transform 2.2s;
+}
+
+#auckland-link{
+  margin-bottom: 22vh;
+  visibility: hidden;
+}
+
+#wellington-link, #christchurch-link{
+  margin-bottom: 45vh;
+}
+
+.contact-intro-link{
+ text-align: center;
+ margin-top: 5vh;
+ margin-bottom: 30vh;
+ font-size: 120%;
+}
+
+.portfolio-row-right-1, .portfolio-row-right-2, .portfolio-row-left-1, .portfolio-row-left-2, .location-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.location-row{
+  margin-bottom: 20vh;
+  align-items: center;
+  flex: 1;
+}
+
+.location-row img{
+  width: 100%;
+  height: auto;
+}
+
+.portfolio-row-right-1, .portfolio-row-right-2, .portfolio-row-left-1, .portfolio-row-left-2{
+  margin-top: -15vh;
+}
+
+.portfolio-row-right-1, .portfolio-row-right-2{
+  margin-left: 15vw;
+}
+
+.about-text-container p{
+  max-width: 85%;
+  padding: 0.5em 0;
+}
+
+.portfolio-text-container-right-1, .portfolio-text-container-right-2, .portfolio-text-container-left-1, .portfolio-text-container-left-2, .contact-text-container{
+  font-size: 120%;
+}
+
+.portfolio-text-container-right-1, .portfolio-text-container-right-2, .portfolio-text-container-left-1, .portfolio-text-container-left-2{
+  flex: 1;
+}
+
+.portfolio-text-container-right-1{
+  margin-top: 15vh;
+}
+
+.portfolio-text-container-right-1 p, .portfolio-text-container-right-2 p, .portfolio-text-container-left-1 p, .portfolio-text-container-left-2 p{
+ max-width: 85%;
+ padding: 0.5em 0;
+}
+
+.portfolio-text-container-right-2{
+  margin-top: 40vh;
+}
+
+.portfolio-text-container-left-1, .portfolio-text-container-left-2{
+  margin-left: 15vw;
+}
+
+.portfolio-text-container-left-1{
+  margin-top: 35vh;
+}
+
+.portfolio-text-container-left-2{
+  margin-top: 55vh;
+  margin-bottom: 40vh;
+}
+
+.location-map{
+  flex: 2;
+}
+
+.contact-text-container{
+  margin-right: 10vw;
+}
+
+.number-email{
+  margin-bottom: 2vh;
+}
+
+@media (max-width: 1316px){
+  .intro-text, .about-intro-text{
+    margin-top: 2vh;
+  }
+
+  .intro-text{
+    margin-top: 10vh;
+    font-size: 100%;
+    padding: 2em 4em;
+  }
+
+  .portfolio-row-right-1,   .portfolio-row-right-2{
+    margin-left: 15vw;
+  }
+
+  .portfolio-row-left-1, .portfolio-row-left-2{
+    margin-top: -15vh;
+  }
+
+  .portfolio-text-container-right-1{
+    margin-top: 10vh;
+  }
+
+  .portfolio-text-container-right-2{
+    margin-top: 40vh;
+  }
+  .portfolio-text-container-left-1{
+    margin-top: 45vh;
+  }
+
+  .portfolio-text-container-left-2{
+    margin-top: 50vh;
+  }
+
+}
+
+@media (max-width: 1212px){
+
+  .portfolio-row-right-1, .portfolio-row-right-2, .portfolio-row-left-1, .portfolio-row-left-2{
+    margin-top: 10vh;
+  }
+
+  .portfolio-text-container-right-2{
+    margin-top: 5vh;
+  }
+
+  .portfolio-text-container-left-1{
+    margin-top: 20vh;
+  }
+
+  .portfolio-text-container-left-2{
+    margin-top: 10vh;
+  }
+
+}
+
+@media (max-width: 768px){
+
+  .nav-fade, .nav-no-fade{
+    padding: 4vh 0;
+  }
+
+  #logo img{
+    width: 10vw;
+  }
+
+  .menu a{
+    font-size: 2vw;
+  }
+
+  .hero{
+    margin-top: 16vh;
+  }
+
+  .sliding-background {
+    background-size: 35%;
+  }
+
+  header{
+    font-size: 83%;
+    margin-right: 10vw;
+  }
+
+  .people-padding, .portfolio-padding, .contact-padding{
+    width: 4vw;
+    height: 2vh;
+  }
+
+  .intro-text{
+    margin-top: 10vh;
+    font-size: 90%;
+    padding: 2em 5em;
+  }
+
+.about-intro-text{
+    margin-top: 0vh;
+    font-size: 120%;
+    padding: 1em 2em;
+  }
+
+
+  .content-intro{
+    max-width: 60%;
+    font-size: 120%;
+  }
+
+  .event-date{
+    padding: 2em;
+  }
+
+  .event-text{
+    font-size: 100%;
+  }
+
+  .name-role-image{
+    flex: 1;
+  }
+
+  .name-role-image img{
+    width: 100%;
+  }
+
+  .about-text-container{
+    flex: 2;
+    margin-left: 0vw;
+  }
+
+  .about-text-container p{
+    font-size: 90%;
+    max-width: 100%;
+  }
+
+  .portfolio-row-right-1, .portfolio-row-right-2, .portfolio-row-left-1, .portfolio-row-left-2{
+    margin-top: -7vh;
+    font-size: 90%;
+  }
+
+  .portfolio-row-right-1, .portfolio-row-right-2{
+    margin-left: 15vw;
+  }
+
+  .portfolio-row-left-1{
+    margin-top: 7vh;
+  }
+
+  .portfolio-row-left-2{
+    margin-top: 0vh;
+  }
+
+  .portfolio-text-container-right-1, .portfolio-text-container-right-2, .portfolio-text-container-left-1, .portfolio-text-container-left-2, .contact-text-container{
+    font-size: 100%;
+  }
+
+  .portfolio-text-container-right-1, .portfolio-text-container-left-1{
+    margin-top: 10vh;
+  }
+
+  .portfolio-text-container-right-2{
+    margin-top: 17vh;
+  }
+
+  .portfolio-text-container-left-2{
+    margin-top: 12vh;
+  }
+
+  .contact-intro-link{
+   font-size: 100%;
+  }
+
+    .location-row{
+      flex-direction: column-reverse;
+      margin-bottom: 5vh;
+      align-items: flex-start;
+
+    }
+
+    #wellington-link, #christchurch-link{
+      margin-bottom: 32vh;
+    }
+}
+
+@media (max-width: 426px){
+
+  header{
+    width: 100%;
+  }
+
+  .align-items{
+    max-width: 95%;
+  }
+
+  .nav-fade, .nav-no-fade{
+    padding-top: 2.5vh;
+    position: static;
+    box-shadow: none;
+    flex-direction: column;
+    height: 50vh;
+    margin-top: 2vh;
+  }
+
+  .nav-fade{
+    background-color: rgb(0, 0, 0, 0);
+    position: absolute;
+  }
+
+  .nav-no-fade{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  #logo{
+    justify-content: center;
+    margin-left: 0%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #logo img{
+    width: 20vw;
+  }
+
+  .menu{
+    flex: 1;
+    flex-direction: column;
+    margin-right: 0%;
+    }
+
+  .menu a{
+    font-size: 200%;
+  }
+
+  .sliding-background{
+    background-size: 55%;
+  }
+
+  .about-link, .menu .about-link-underline{
+    margin: 8vw;
+  }
+
+  .content-title, .portfolio-title, .contact-title{
+    font-size: 200%;
+    margin-left: 2%;
+    margin-top: -5
+  }
+
+  .portfolio, .about, .contact{
+    margin-top: 10vh;
+  }
+
+  .intro-text, .about-intro-text{
+    margin-top: 5vh;
+    font-size: 80%;
+    padding: 2em 2em;
+    line-height: 4vh;
+  }
+
+  .about-intro-text{
+    font-size: 110%;
+  }
+
+  .content-intro{
+    max-width: 100%;
+  }
+
+  .shortcuts{
+    margin-top: 4vh;
+  }
+
+  .link{
+  	padding: 1em 0;
+  	margin-right: 2px;
+  }
+
+  .contact-intro-link{
+   margin-top: 2vh;
+   margin-bottom: 20vh;
+  }
+
+  .hero{
+    height: 150vh;
+    margin-top: -13vh;
+  }
+
+  .firm-name{
+    margin-top: 26vh;
+    margin-left: 18%;
+    font-size: 70px;
+  }
+
+  .portfolio-row-right-1, .portfolio-row-right-2, .portfolio-row-left-1, .portfolio-row-left-2{
+    margin-top: 0vh;
+    font-size: 90%;
+    flex-direction: column-reverse;
+  }
+
+  .portfolio-row-right-1, .portfolio-row-right-2{
+    flex-direction: column-reverse;
+  }
+
+  .portfolio-row-left-1, .portfolio-row-left-2{
+    flex-direction: column;
+  }
+
+  .portfolio-row-right-1, .portfolio-row-right-2, .portfolio-text-container-left-1, .portfolio-text-container-left-2{
+    margin-left: 0vw;
+  }
+
+  .portfolio-row-right-1, .portfolio-row-right-2, .portfolio-row-left-2, .portfolio-row-left-2{
+    margin-top: 0vh;
+  }
+
+  .portfolio-text-container-right-1, .portfolio-text-container-right-2, .portfolio-text-container-left-1, .portfolio-text-container-left-2{
+    font-size: 120%;
+    margin-left: 2.5vw;
+    margin-top: 1vh;
+    margin-bottom: 15vh;
+  }
+
+  .portfolio-img-right img, .portfolio-img-left img{
+    justify-content: center;
+    float: none;
+    align-items: center;
+  }
+
+  .people-padding, .portfolio-padding, .contact-padding{
+    width: 8vw;
+  }
+
+  .contact-text-container{
+    font-size: 110%;
+  }
+
+  .contact-intro-link{
+   margin-top: 2vh;
+   font-size: 80%;
+  }
+
+  .location-row{
+    flex: 1;
+  }
+
+  #auckland-link{
+    margin-bottom: 5vh;
+  }
+
+  #wellington-link, #christchurch-link{
+    margin-bottom: 13vh;
+  }
+
+}
